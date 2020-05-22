@@ -1,0 +1,171 @@
+html {
+    height: 100%;
+}
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: radial-gradient(100% 225% at 100% 0%, #120037 0%, #000000 100%), linear-gradient(35deg, #C0FFC7 0%, #17001F 75%), linear-gradient(55deg, #2400FF 0%, #000000 100%), linear-gradient(90deg, #FFE037 0%, #FFE037 40%, #1DCD9F 40%, #1DCD9F 50%, #088C6F 50%, #088C6F 70%, #23033C 70%, #23033C 100%), linear-gradient(180deg, #FF8FE5 0%, #FF8FE5 45%, #FBFF64 45%, #FBFF64 60%, #76E3FF 60%, #76E3FF 80%, #6EB6E7 80%, #6EB6E7 100%);
+    background-blend-mode: screen, overlay, overlay, darken, normal;}
+
+.login-contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-contain h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-contain .user-contain {
+    position: relative;
+}
+
+.login-contain .user-contain input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.login-contain .user-contain label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-contain .user-contain input:focus ~ label,
+.login-contain .user-contain input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.login-contain form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,.0); /*enleve le rendu auto <button> */
+    border: none;                       /*enleve le rendu auto <button> */
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    
+}
+/*hover du button submit: fond + effet de lumiere + background à pesonnaliser*/
+.login-contain button:hover {
+    background: linear-gradient(125deg, #FDFF9C 0%, #0500FF 100%), linear-gradient(180deg, #D3D3D3 0%, #161616 100%), linear-gradient(310deg, #00F0FF 0%, #00F0FF 20%, #0017E3 calc(20% + 1px), #0017E3 40%, #000F8F calc(40% + 1px), #000F8F 70%, #00073F calc(70% + 1px), #00073F 100%), linear-gradient(285deg, #FFB6B9 0%, #FFB6B9 35%, #FAE3D9 calc(35% + 1px), #FAE3D9 45%, #BBDED6 calc(45% + 1px), #BBDED6 65%, #61C0BF calc(65% + 1px), #61C0BF 100%);
+    background-blend-mode: overlay, overlay, exclusion, normal;    border-radius: 5px;
+    
+    box-shadow: 0 0 5px #1858e2,
+                0 0 25px #e4ba49,
+                0 0 50px #70e442,
+                0 0 100px rgb(209, 29, 29);
+    color: rgb(46, 20, 20);
+    font-weight: bolder;
+}
+/*effet visuel autour de submit avec les balises Span*/
+.login-contain button span {
+    position: absolute;
+    display: block;
+}
+.login-contain button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(211, 29, 29));
+    animation: btn-top-mvt 1s linear infinite;
+}
+
+@keyframes btn-top-mvt {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-contain button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #e4ba49);
+    animation: btn-right-mvt 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-right-mvt {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-contain button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #70e442);
+    animation: btn-bottom-mvt 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-bottom-mvt {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-contain button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #1858e2);
+    animation: btn-left-mvt 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-left-mvt {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
